@@ -16,9 +16,9 @@ const Form = () => {
       <div className="form-container">
         <p className="title">Welcome back</p>
         <form className="form">
-          <input type="email" className="input bg-transparent text-white" placeholder="Email" />
+          <input type="email" className="input bg-transparent text-white placeholder:text-emerald-800" placeholder="Email"  />
           <div className="input flex items-center p-0 gap-16 bg-transparent">
-            <input type={type} className="outline-none bg-transparent text-white" placeholder="Password" />
+            <input type={type} className="outline-none bg-transparent text-white placeholder:text-emerald-800" placeholder="Password" />
             <FaMehRollingEyes  onClick={handleShowPassword} />
           </div>
           <p className="page-link">
