@@ -6,9 +6,9 @@ import EmployeDashboard from "./component/dashboard/EmployeDashboard";
 function App() {
   return (
     <div className="text-white" >
-      {/* <Login/> */}
+      <Login/>
       {/* <EmployeDashboard/> */}
-      <AdminDashboard/>
+      {/* <AdminDashboard/> */}
     </div>
   );
 }
