@@ -2,29 +2,56 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { FaMehRollingEyes } from "react-icons/fa";
 
-const Form = () => {
-    const [type, settype] = useState("password")
-    const handleShowPassword =()=>{
-       if(type==="password"){
-        settype("text")
-       }else{
-        settype("password")
-       }
+const Form = ({ handelLogin }) => {
+  // console.log(handelLogin);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [type, settype] = useState("password");
+  const handleShowPassword = () => {
+    if (type === "password") {
+      settype("text");
+    } else {
+      settype("password");
     }
+  };
+  console.log(email,password);
+  const submitHandler = (e) => {
+    e.preventDefault();
+    handelLogin(email,password)
+    setEmail("");
+    setPassword("");
+  };
   return (
     <StyledWrapper>
       <div className="form-container">
         <p className="title">Welcome back</p>
-        <form className="form">
-          <input type="email" className="input bg-transparent text-white placeholder:text-emerald-800" placeholder="Email"  />
+        <form onSubmit={(e)=>{submitHandler(e)}} className="form">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="input bg-transparent text-white 
+          placeholder:text-emerald-800"
+            placeholder="Email"
+          />
           <div className="input flex items-center p-0 gap-1 bg-transparent">
-            <input type={type} className="outline-none bg-transparent w-full text-white placeholder:text-emerald-800" placeholder="Password" />
-            <FaMehRollingEyes className="cursor-pointer"  onClick={handleShowPassword} size={20} />
+            <input
+              type={type}
+              className="outline-none bg-transparent w-full text-white placeholder:text-emerald-800"
+              placeholder="Password"
+              value={password}
+              onChange={(e)=>setPassword(e.target.value)}
+            />
+            <FaMehRollingEyes
+              className="cursor-pointer"
+              onClick={handleShowPassword}
+              size={20}
+            />
           </div>
           <p className="page-link">
             <span className="page-link-label">Forgot Password?</span>
           </p>
-          <button className="form-btn">Log in</button>
+          <button type="submit" className="form-btn">Log in</button>
         </form>
         <p className="sign-up-label">
           Don&apos;t have an account?
@@ -94,7 +121,7 @@ const StyledWrapper = styled.div`
     width: 350px;
     height: 500px;
     // background-color: #fff;
-    background-color:#003b2e;
+    background-color: #003b2e;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
     box-sizing: border-box;
