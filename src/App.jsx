@@ -12,12 +12,12 @@ function App() {
     if (email === "admin@me.com" && password == "123") {
       console.log("This is admin");
     } else if (email === "user@me.com" && password == "123") {
-      console.log("This is user");
+      console.log("This is users");
     } else {
       console.log("Invalid Credentials");
     }
   };
-  handelLogin("user@me.com", "123");
+  // handelLogin("user@me.com", "123");
   return (
     <div className="text-white">
       {!user ? <Login handelLogin={handelLogin} /> : ""}

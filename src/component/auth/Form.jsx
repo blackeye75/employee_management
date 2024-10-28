@@ -14,7 +14,7 @@ const Form = ({ handelLogin }) => {
       settype("password");
     }
   };
-  console.log(email,password);
+  // console.log(email,password);
   const submitHandler = (e) => {
     e.preventDefault();
     handelLogin(email,password)
