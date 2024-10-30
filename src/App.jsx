@@ -7,6 +7,9 @@ import { getLocalStorage, setLocalStorage } from "./utils/localStorage";
 import { AuthContext } from "./context/AuthProvider";
 
 function App() {
+  
+    const AuthData = useContext(AuthContext);
+    console.log(AuthData);
   // setLocalStorage()
   const [user, setuser] = useState(null);
   const handelLogin = (email, password) => {
@@ -20,9 +23,6 @@ function App() {
     }
   };
   // handelLogin("user@me.com", "123");
-
-  const data = useContext(AuthContext);
-  console.log(data);
   return (
     <div className="text-white">
       {!user ? <Login handelLogin={handelLogin} /> : ""}
