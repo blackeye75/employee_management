@@ -42,11 +42,11 @@ const CreateTask = () => {
             />
           </div>
         </div>
-        <div className="w-1/2 space-y-2 py-8 items-end  flex flex-col ">
+        <div className="w-1/2 space-y-2 py-8 items-end pr-3  flex flex-col ">
           {/* <div className="w-full   flex flex-col" > */}
           <h3 className="text-start w-full pl-36">Description</h3>
           <textarea
-            className="mt-2 w-[80%] rounded-md bg-transparent outline-none border-[1px]"
+            className="mt-2 p-1 w-[80%] rounded-md bg-transparent outline-none border-[1px]"
             name=""
             id=""
             cols="30"
