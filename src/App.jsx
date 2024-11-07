@@ -21,7 +21,7 @@ function App() {
         (e) => email === e.email && password === e.password 
       )
     ) {
-      setuser("user");
+      setuser("employees");
     } else {
       console.log("Invalid Credentials");
     }
