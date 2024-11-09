@@ -10,7 +10,7 @@ function App() {
   const authData = useContext(AuthContext);
   // console.log();
   // setLocalStorage()
-  const [user, setuser] = useState(null);
+  const [user, setuser] = useState('');
 
   useEffect(() => {
     if (authData) {
@@ -41,10 +41,12 @@ function App() {
     }
   };
   // handelLogin("user@me.com", "123");
+  console.log(user);
   return (
     <div className="text-white">
       {!user ? <Login handelLogin={handelLogin} /> : ""}
-      {user == "admin" ? <AdminDashboard /> : <EmployeDashboard />}
+      
+      {user === "admin" ? <AdminDashboard /> : <EmployeDashboard />}
       {/* <EmployeDashboard/> */}
       {/* <AdminDashboard/> */}
     </div>
